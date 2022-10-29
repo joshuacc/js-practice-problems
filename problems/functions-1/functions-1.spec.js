@@ -1,3 +1,14 @@
+// Write the "getLength" function here
+
+
+describe("getLength", () => {
+    it("returns the length of the array", () => {
+        expect(getLength([1, 2, 3])).toBe(3);
+        expect(getLength([1, 2, 3, 4, 5])).toBe(5);
+        expect(getLength([])).toBe(0);
+    });
+});
+
 // Write the "total" function here
 
 
