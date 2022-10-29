@@ -1,3 +1,5 @@
+// Write the "total" function here
+
 
 xdescribe("total", () => {
     it("returns the total of all the numbers in the array", () => {
@@ -11,6 +13,9 @@ xdescribe("total", () => {
     });
 });
 
+// Write the "average" function here
+
+
 xdescribe("average", () => {
     it("returns the average of an array of numbers", () => {
         expect(average([1, 2, 3, 4, 5])).toEqual(3);
@@ -22,21 +27,30 @@ xdescribe("average", () => {
     });
 });
 
+// Write the "getFullName" function here
+
+
 xdescribe("getFullName", () => {
     it("returns the full name of a person", () => {
-        expect(getFullName({ firstName: "John", lastName: "Doe" })).toEqual("John Doe");
-        expect(getFullName({ firstName: "Jane", lastName: "Doe" })).toEqual("Jane Doe");
+        expect(getFullName({ firstName: "Josemaria", lastName: "Escriva" })).toEqual("Josemaria Escriva");
+        expect(getFullName({ firstName: "Dorothy", lastName: "Day" })).toEqual("Dorothy Day");
     });
 });
+
+// Write the "getAllFullNames" function here
+
 
 xdescribe("getAllFullNames", () => {
     it("returns the full names of all the people in the array", () => {
         expect(getAllFullNames([
-            { firstName: "John", lastName: "Doe" },
-            { firstName: "Jane", lastName: "Doe" },
-        ])).toEqual(["John Doe", "Jane Doe"]);
+            { firstName: "John", lastName: "Chrysostom" },
+            { firstName: "Teresa", lastName: "Benedicta" },
+        ])).toEqual(["John Chrysostom", "Teresa Benedicta"]);
     });
 });
+
+// Write the "getEvens" function here
+
 
 xdescribe("getEvens", () => {
     it("returns all the even numbers in the array", () => {
@@ -48,6 +62,9 @@ xdescribe("getEvens", () => {
         expect(getEvens([1, 3, 5, 7, 9])).toEqual([]);
     });
 });
+
+// Write the "findFirstOccurrenceIndex" function here
+
 
 xdescribe("findFirstOccurrenceIndex", () => {
     it("returns the index of the first occurrence of the value in the array", () => {
@@ -61,6 +78,9 @@ xdescribe("findFirstOccurrenceIndex", () => {
     });
 });
 
+// Write the "findLastOccurrenceIndex" function here
+
+
 xdescribe("findLastOccurrenceIndex", () => {
     it("returns the index of the last occurrence of the value in the array", () => {
         expect(findLastOccurrenceIndex([1, 2, 3, 4, 5], 3)).toEqual(2);
@@ -73,6 +93,9 @@ xdescribe("findLastOccurrenceIndex", () => {
     });
 });
 
+// Write the "getValuesOrdinal" function here
+
+
 xdescribe("getValuesOrdinal", () => {
     it("returns the ordinal of each value in the array", () => {
         expect(getValuesOrdinal([1, 2, 3, 4, 5])).toEqual(["1st", "2nd", "3rd", "4th", "5th"]);
@@ -81,9 +104,76 @@ xdescribe("getValuesOrdinal", () => {
     });
 });
 
+// Write the "getValuesSquare" function here
+
+
 xdescribe("getValuesSquare", () => {
     it("returns the square of each value in the array", () => {
         expect(getValuesSquare([1, 2, 3, 4, 5])).toEqual([1, 4, 9, 16, 25]);
         expect(getValuesSquare([10, 20, 30, 40, 50])).toEqual([100, 400, 900, 1600, 2500]);
+    });
+});
+
+
+// Write the "sumOfOdds" function here
+
+
+xdescribe("sumOfOdds", () => {
+    it("returns the sum of all the odd numbers in the array", () => {
+        expect(sumOfOdds([1, 2, 3, 4, 5])).toEqual(9);
+        expect(sumOfOdds([1, 3, 5, 7, 9])).toEqual(25);
+    });
+
+    it("returns 0 if there are no odd numbers in the array", () => {
+        expect(sumOfOdds([2, 4, 6, 8, 10])).toEqual(0);
+    });
+
+    it("returns 0 if the array is empty", () => {
+        expect(sumOfOdds([])).toEqual(0);
+    });
+});
+
+// Write the "findYoungestPerson" function here
+
+
+xdescribe("findYoungestPerson", () => {
+    it("returns the youngest person in the array", () => {
+        expect(findYoungestPerson([
+            { firstName: "Augustine", lastName: "Hippo", age: 30 },
+            { firstName: "Theresa", lastName: "Avila", age: 25 },
+        ])).toEqual({ firstName: "Theresa", lastName: "Avila", age: 25 });
+
+        expect(findYoungestPerson([
+            { firstName: "Ignatius", lastName: "Loyola", age: 30 },
+            { firstName: "Thomas", lastName: "Aquinas", age: 6 },
+            { firstName: "Elizabeth", lastName: "Trinity", age: 25 },
+        ])).toEqual({ firstName: "Thomas", lastName: "Aquinas", age: 6 });
+    });
+
+    it("returns undefined if the array is empty", () => {
+        expect(findYoungestPerson([])).toEqual(undefined);
+    });
+});
+
+
+// Write the "findAverageAge" function here
+
+
+xdescribe("findAverageAge", () => {
+    it("returns the average age of all the people in the array", () => {
+        expect(findAverageAge([
+            { firstName: "Benedict", lastName: "Nursia", age: 30 },
+            { firstName: "Scholastica", lastName: "Nursia", age: 25 },
+        ])).toEqual(27.5);
+
+        expect(findAverageAge([
+            { firstName: "Gregory", lastName: "Great", age: 30 },
+            { firstName: "John", lastName: "Paul", age: 6 },
+            { firstName: "Leo", lastName: "Great", age: 25 },
+        ])).toEqual(20.333333333333332);
+    });
+
+    it("returns 0 if the array is empty", () => {
+        expect(findAverageAge([])).toEqual(0);
     });
 });
